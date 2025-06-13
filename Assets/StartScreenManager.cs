@@ -31,17 +31,17 @@ public class StartScreenManager : MonoBehaviour
         switch (selectedDifficulty)
         {
             case "Easy":
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("Easy");
                 break;
             case "Medium":
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("Medium");
                 break;
             case "Hard":
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("Hard");
                 break;
             default:
                 Debug.LogWarning("Unknown difficulty level, loading default scene");
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("Easy");
                 break;
         }
     }
