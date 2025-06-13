@@ -1,23 +1,28 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
     [SerializeField] private string sceneName;
+    private SoundEffectsLayer soundEffects;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.transform.tag == "Enemy")
         {
             HealthManager.health--;
-            if(HealthManager.health <=0){
+            if(HealthManager.health <= 0){
                 // PlayerManager.isGameOver = true;
                 // AudioManager.instance.Play("GameOver");
                 SceneManager.LoadScene(sceneName);
                 gameObject.SetActive(false);
-            }else{
+            } else {
+                // Play damage sound only when health decreases but is greater than zero
+                if (soundEffects != null && soundEffects.damageSound != null) {
+                    soundEffects.PlaySFX(soundEffects.damageSound);
+                }
+                
                 StartCoroutine(GetHurt());
             }
         }
@@ -28,6 +33,12 @@ public class PlayerCollision : MonoBehaviour
     {
         // Cache the animator reference
         animator = GetComponent<Animator>();
+        
+        // Find the sound effects layer
+        GameObject audioObj = GameObject.FindGameObjectWithTag("Audio");
+        if (audioObj != null) {
+            soundEffects = audioObj.GetComponent<SoundEffectsLayer>();
+        }
     }
 
     IEnumerator GetHurt(){ 
