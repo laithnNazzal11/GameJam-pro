@@ -6,6 +6,7 @@ public class PlayerBottom : MonoBehaviour
     public float frameRate = 10f;
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
+    //
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
