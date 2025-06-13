@@ -993,6 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: SampleScene
+  gameOverPanel: {fileID: 0}
 --- !u!1 &73117096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,7 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4982e63a0e589493a92dd0ecab6ea040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: VersionThree
+  sceneName: Easy
 --- !u!1 &74772684
 GameObject:
   m_ObjectHideFlags: 0
@@ -8701,7 +8702,7 @@ Transform:
   m_GameObject: {fileID: 957813195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.5, y: 2.3, z: 0}
+  m_LocalPosition: {x: 16.5, y: 1.576, z: 0}
   m_LocalScale: {x: 0.25792292, y: 0.25792292, z: 0.25792292}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17247,7 +17248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4982e63a0e589493a92dd0ecab6ea040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: VersionThree
+  sceneName: Easy
 --- !u!1 &1945559947
 GameObject:
   m_ObjectHideFlags: 0
