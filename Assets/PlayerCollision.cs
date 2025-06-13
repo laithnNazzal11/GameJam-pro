@@ -17,7 +17,7 @@ public class PlayerCollision : MonoBehaviour
             if(HealthManager.health <= 0){
                 // PlayerManager.isGameOver = true;
                 // AudioManager.instance.Play("GameOver");
-                SceneManager.LoadScene(sceneName);
+                //SceneManager.LoadScene(sceneName);
                 if (gameOverPanel != null)
                 {
                     gameOverPanel.SetActive(true);
