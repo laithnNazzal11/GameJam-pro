@@ -3,82 +3,87 @@ using UnityEngine.InputSystem;
 
 public class PlayerOneScript : MonoBehaviour
 {
-    public Sprite[] sprites;       // Animation frames
-    public float frameRate = 10f;  // Frames per second
-    public float moveSpeed = 5f;   // Movement speed
-    // public float jumpForce = 5f;   // Jump force
-    // public float jumpDelay = 0.5f; // Delay between jumps
-    // public float jumpCooldown = 0.5f; // Cooldown between jumps
-    // public float jumpTimer = 0f; // Timer for jump cooldown
-    // public float jumpTimerDelay = 0.5f; // Delay for jump cooldown
-    // public float jumpTimerDelay = 0.5f; // Delay for jump cooldown
+    // public Sprite[] sprites;
+    // public float frameRate = 10f;
+    // public float moveSpeed = 5f;
+    // public float jumpForce = 7f;
 
-    private SpriteRenderer spriteRenderer;
-    private int currentFrame = 0;
-    private float timer = 0f;
+    // private SpriteRenderer spriteRenderer;
+    // private Rigidbody2D rb;
+    // private int currentFrame = 0;
+    // private float timer = 0f;
+    // private bool isGrounded = false;
 
-    private Vector2 input;
+    // private float horizontalInput;
 
-    void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    // void Start()
+    // {
+    //     spriteRenderer = GetComponent<SpriteRenderer>();
+    //     rb = GetComponent<Rigidbody2D>();
+    //     rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+    // }
 
-    void Update()
-    {
-        HandleInput();
-        MovePlayer();
-        HandleAnimation();
-    }
+    // void Update()
+    // {
+    //     HandleInput();
+    //     HandleAnimation();
+    // }
 
-    void HandleInput()
-    {
-        var gamepad = Gamepad.current;
-        if (gamepad != null)
-        {
-            input = gamepad.leftStick.ReadValue();
-        }
-        else
-        {
-            var keyboard = Keyboard.current;
-            float x = 0, y = 0;
-            if (keyboard.aKey.isPressed) x -= 1;
-            if (keyboard.dKey.isPressed) x += 1;
-            if (keyboard.wKey.isPressed) y += 1;
-            if (keyboard.sKey.isPressed) y -= 1;
-            input = new Vector2(x, y);
-        }
-    }
+    // void FixedUpdate()
+    // {
+    //     MovePlayer();
+    // }
 
-    void MovePlayer()
-    {
-        Vector3 movement = new Vector3(input.x, input.y, 0f).normalized;
-        transform.position += movement * moveSpeed * Time.deltaTime;
-    }
+    // void HandleInput()
+    // {
+    //     horizontalInput = Input.GetAxisRaw("Horizontal");
+    //     if (Input.GetButtonDown("Jump") && isGrounded)
+    //     {
+    //         Debug.Log("Jump input detected and isGrounded is true");
+    //         rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+    //         isGrounded = false;
+    //     }
+    // }
 
-    void HandleAnimation()
-    {
-        if (input != Vector2.zero)
-        {
-            timer += Time.deltaTime;
-            if (timer >= 1f / frameRate)
-            {
-                currentFrame = (currentFrame + 1) % sprites.Length;
-                spriteRenderer.sprite = sprites[currentFrame];
-                timer = 0f;
-            }
+    // void MovePlayer()
+    // {
+    //     Vector2 move = new Vector2(horizontalInput * moveSpeed * Time.fixedDeltaTime, 0f);
+    //     rb.MovePosition(rb.position + move); // This respects collision
+    // }
 
-            // Flip sprite based on direction
-            if (input.x != 0)
-                spriteRenderer.flipX = input.x < 0;
-        }
-        else
-        {
-            // Idle frame (first sprite)
-            spriteRenderer.sprite = sprites[0];
-            currentFrame = 0;
-            timer = 0f;
-        }
-    }
+    // void HandleAnimation()
+    // {
+    //     if (horizontalInput != 0f)
+    //     {
+    //         timer += Time.deltaTime;
+    //         if (timer >= 1f / frameRate)
+    //         {
+    //             currentFrame = (currentFrame + 1) % sprites.Length;
+    //             spriteRenderer.sprite = sprites[currentFrame];
+    //             timer = 0f;
+    //         }
+
+    //         spriteRenderer.flipX = horizontalInput < 0;
+    //     }
+    //     else
+    //     {
+    //         spriteRenderer.sprite = sprites[0];
+    //         currentFrame = 0;
+    //         timer = 0f;
+    //     }
+    // }
+
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.contacts[0].normal.y > 0.5f)
+    //     {
+    //         isGrounded = true;
+    //     }
+    // }
+
+    // void OnCollisionExit2D(Collision2D collision)
+    // {
+    //     isGrounded = false;
+    // }
 }
 
