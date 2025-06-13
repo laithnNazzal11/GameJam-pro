@@ -50,7 +50,6 @@ public class PlayerPairController : MonoBehaviour
             groundCheckBottom = checkBottom.transform;
         }
 
-        Debug.Log("PlayerPairController initialized successfully!");
     }
 
     void Update()
@@ -77,7 +76,6 @@ public class PlayerPairController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log($"Jump pressed. Top grounded: {isTopGrounded}, Bottom grounded: {isBottomGrounded}");
             if (isTopGrounded)
                 rbTop.linearVelocity = new Vector2(rbTop.linearVelocity.x, jumpForce);
 
