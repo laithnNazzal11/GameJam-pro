@@ -26,7 +26,6 @@ public class StartScreenManager : MonoBehaviour
         }
 
         string selectedDifficulty = difficultyDropdown.options[difficultyDropdown.value].text;
-        Debug.Log("Starting game with difficulty: " + selectedDifficulty); // Add this for debugging
 
         switch (selectedDifficulty)
         {
