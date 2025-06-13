@@ -65,7 +65,7 @@ public class PlayerBottom : MonoBehaviour
         }
     }
 
-    void HandleMovementAnimation()
+    void HandleMovementAnimation(){
         HandleAnimation();
     }
 

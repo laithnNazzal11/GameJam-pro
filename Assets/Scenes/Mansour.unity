@@ -2667,6 +2667,8 @@ MonoBehaviour:
   - {fileID: -7807447491633730432, guid: 3e0dd9b8e93234ed58e6a581087121b0, type: 3}
   - {fileID: -1163380735032163186, guid: af31bf2a020a4490abe06d0b3f3b012f, type: 3}
   - {fileID: 8253708704689375098, guid: 6b3d0e2beb58c420d9ce790f55699540, type: 3}
+  attackSprites:
+  - {fileID: -8992048278120488344, guid: 18d529594124a4ea08b2386ed7e285c7, type: 3}
   frameRate: 10
   moveSpeed: 5
   jumpForce: 7
@@ -3611,6 +3613,8 @@ MonoBehaviour:
   - {fileID: -916679252614514971, guid: 31b985957ddc74d11991b41575ea3111, type: 3}
   - {fileID: -1398607726995942981, guid: 9ba39146201494933a534d2a4d5ed5b7, type: 3}
   - {fileID: 8295501734416899622, guid: a18c9c7e7bd094f0db31185e047ca962, type: 3}
+  attackSprites:
+  - {fileID: -9058226093457108480, guid: 990745f39efc24049880d8e1a0049a7c, type: 3}
   frameRate: 10
   moveSpeed: 5
   jumpForce: 7
