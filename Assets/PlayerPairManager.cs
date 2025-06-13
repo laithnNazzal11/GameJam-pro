@@ -60,7 +60,6 @@ public class PlayerPairManager : MonoBehaviour
             groundCheckBottom = checkBottom.transform;
         }
 
-        Debug.Log("PlayerPairController initialized successfully!");
     }
 
     void Update()
