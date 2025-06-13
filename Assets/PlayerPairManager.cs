@@ -90,13 +90,13 @@ public class PlayerPairManager : MonoBehaviour
             if (isTopGrounded)
             {
                 rbTop.linearVelocity = new Vector2(rbTop.linearVelocity.x, jumpForce);
-                // soundEffects.PlaySFX(soundEffects.jumpSound);
+                soundEffects.PlaySFX(soundEffects.jumpSound);
             }
 
             if (isBottomGrounded)
             {
                 rbBottom.linearVelocity = new Vector2(rbBottom.linearVelocity.x, -jumpForce);
-                // soundEffects.PlaySFX(soundEffects.jumpSound);
+                soundEffects.PlaySFX(soundEffects.jumpSound);
             }
         }
     }
