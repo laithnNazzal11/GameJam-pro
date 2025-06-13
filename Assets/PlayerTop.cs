@@ -34,6 +34,7 @@ public class PlayerTop : MonoBehaviour
             isAttacking = true;
             attackTimer = 0f;
             currentFrame = 0;
+            
         }
 
         if (isAttacking)
