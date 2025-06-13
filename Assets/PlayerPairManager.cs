@@ -16,6 +16,16 @@ public class PlayerPairManager : MonoBehaviour
     private Rigidbody2D rbBottom;
     private PlayerTop playerTopScript;
     private PlayerBottom playerBottomScript;
+    
+    SoundEffectsLayer soundEffects;
+
+    void Awake(){
+        GameObject audioObj = GameObject.FindGameObjectWithTag("Audio");
+        if (audioObj != null) {
+            soundEffects = audioObj.GetComponent<SoundEffectsLayer>();
+        }
+      
+    }
 
     void Start()
     {
@@ -77,12 +87,17 @@ public class PlayerPairManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log($"Jump pressed. Top grounded: {isTopGrounded}, Bottom grounded: {isBottomGrounded}");
             if (isTopGrounded)
+            {
                 rbTop.linearVelocity = new Vector2(rbTop.linearVelocity.x, jumpForce);
+                // soundEffects.PlaySFX(soundEffects.jumpSound);
+            }
 
             if (isBottomGrounded)
+            {
                 rbBottom.linearVelocity = new Vector2(rbBottom.linearVelocity.x, -jumpForce);
+                // soundEffects.PlaySFX(soundEffects.jumpSound);
+            }
         }
     }
 

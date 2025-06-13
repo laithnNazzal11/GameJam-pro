@@ -7,24 +7,17 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] private GameObject gameOverPanel; // Drag your GameOver UI Panel in Inspector
 
-    private Animator animator;
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(false); // Hide Game Over UI at start
-    }
+    private SoundEffectsLayer soundEffects;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if(collision.transform.tag == "Enemy")
         {
             HealthManager.health--;
-
-            if (HealthManager.health <= 0)
-            {
-                // Show Game Over UI instead of loading scene
+            if(HealthManager.health <= 0){
+                // PlayerManager.isGameOver = true;
+                // AudioManager.instance.Play("GameOver");
+                SceneManager.LoadScene(sceneName);
                 if (gameOverPanel != null)
                 {
                     gameOverPanel.SetActive(true);
@@ -32,13 +25,31 @@ public class PlayerCollision : MonoBehaviour
                 }
 
                 gameObject.SetActive(false); // Disable player
-            }
-            else
-            {
+            } else {
+                // Play damage sound only when health decreases but is greater than zero
+                if (soundEffects != null && soundEffects.damageSound != null) {
+                    soundEffects.PlaySFX(soundEffects.damageSound);
+                }
+                
                 StartCoroutine(GetHurt());
             }
         }
     }
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        
+        // Find the sound effects layer
+        GameObject audioObj = GameObject.FindGameObjectWithTag("Audio");
+        if (audioObj != null) {
+            soundEffects = audioObj.GetComponent<SoundEffectsLayer>();
+        }
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false); // Hide Game Over UI at start
+    }
+
 
     IEnumerator GetHurt()
     {
