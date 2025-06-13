@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerTop : MonoBehaviour
 {
     public Sprite[] sprites;
+    public Sprite[] attackSprites;  // Array for attack animation sprites
     public float frameRate = 10f;
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
@@ -13,6 +14,9 @@ public class PlayerTop : MonoBehaviour
     private float timer = 0f;
     private bool isGrounded = false;
     private float horizontalInput = 0f;
+    private bool isAttacking = false;
+    private float attackTimer = 0f;
+    private float attackDuration = 0.5f;  // Duration of attack animation
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,10 +28,43 @@ public class PlayerTop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleAnimation();
+        // Check for attack input
+        if (Input.GetKeyDown(KeyCode.G) && !isAttacking)
+        {
+            isAttacking = true;
+            attackTimer = 0f;
+            currentFrame = 0;
+        }
+
+        if (isAttacking)
+        {
+            HandleAttackAnimation();
+        }
+        else
+        {
+            HandleMovementAnimation();
+        }
     }
 
-    void HandleAnimation()
+    void HandleAttackAnimation()
+    {
+        attackTimer += Time.deltaTime;
+        if (attackTimer >= attackDuration)
+        {
+            isAttacking = false;
+            return;
+        }
+
+        timer += Time.deltaTime;
+        if (timer >= 1f / frameRate)
+        {
+            currentFrame = (currentFrame + 1) % attackSprites.Length;
+            spriteRenderer.sprite = attackSprites[currentFrame];
+            timer = 0f;
+        }
+    }
+
+    void HandleMovementAnimation()
     {
         if (horizontalInput != 0f)
         {
