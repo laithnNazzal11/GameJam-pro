@@ -1,39 +1,49 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
     [SerializeField] private string sceneName;
+    [SerializeField] private GameObject gameOverPanel; // Drag your GameOver UI Panel in Inspector
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.transform.tag == "Enemy")
-        {
-            HealthManager.health--;
-            if(HealthManager.health <=0){
-                // PlayerManager.isGameOver = true;
-                // AudioManager.instance.Play("GameOver");
-                SceneManager.LoadScene(sceneName);
-                gameObject.SetActive(false);
-            }else{
-                StartCoroutine(GetHurt());
-            }
-        }
-    }
     private Animator animator;
 
     private void Start()
     {
-        // Cache the animator reference
         animator = GetComponent<Animator>();
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false); // Hide Game Over UI at start
     }
 
-    IEnumerator GetHurt(){ 
-        Physics2D.IgnoreLayerCollision(6,8);
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Enemy")
+        {
+            HealthManager.health--;
 
-        // Only try to use the animator if it exists
+            if (HealthManager.health <= 0)
+            {
+                // Show Game Over UI instead of loading scene
+                if (gameOverPanel != null)
+                {
+                    gameOverPanel.SetActive(true);
+                    Time.timeScale = 0f; // Pause the game
+                }
+
+                gameObject.SetActive(false); // Disable player
+            }
+            else
+            {
+                StartCoroutine(GetHurt());
+            }
+        }
+    }
+
+    IEnumerator GetHurt()
+    {
+        Physics2D.IgnoreLayerCollision(6, 8);
+
         if (animator != null)
         {
             animator.SetLayerWeight(1, 1);
@@ -41,12 +51,18 @@ public class PlayerCollision : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        // Only try to use the animator if it exists
         if (animator != null)
         {
             animator.SetLayerWeight(1, 0);
         }
 
-        Physics2D.IgnoreLayerCollision(6,8, false);
+        Physics2D.IgnoreLayerCollision(6, 8, false);
+    }
+
+    // Called from the UI Button
+    public void ReplayGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(sceneName);
     }
 }
