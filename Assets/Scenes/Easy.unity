@@ -8803,7 +8803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Easy
-  gameOverPanel: {fileID: 0}
+  gameOverPanel: {fileID: 827584403}
 --- !u!1 &929976363
 GameObject:
   m_ObjectHideFlags: 0

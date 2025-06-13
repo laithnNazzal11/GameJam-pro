@@ -4134,7 +4134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Hard
-  gameOverPanel: {fileID: 0}
+  gameOverPanel: {fileID: 1186982315}
 --- !u!1 &923848676
 GameObject:
   m_ObjectHideFlags: 0
