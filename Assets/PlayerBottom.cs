@@ -66,6 +66,10 @@ public class PlayerBottom : MonoBehaviour
     }
 
     void HandleMovementAnimation()
+        HandleAnimation();
+    }
+
+    void HandleAnimation()
     {
         if (horizontalInput != 0f)
         {

@@ -65,6 +65,10 @@ public class PlayerTop : MonoBehaviour
     }
 
     void HandleMovementAnimation()
+        HandleAnimation();
+    }
+
+    void HandleAnimation()
     {
         if (horizontalInput != 0f)
         {
