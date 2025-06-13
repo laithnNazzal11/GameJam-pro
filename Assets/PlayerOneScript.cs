@@ -11,7 +11,7 @@ public class PlayerOneScript : MonoBehaviour
     // public float jumpCooldown = 0.5f; // Cooldown between jumps
     // public float jumpTimer = 0f; // Timer for jump cooldown
     // public float jumpTimerDelay = 0.5f; // Delay for jump cooldown
-    // public float jumpTimerDelay = 0.5f; // Delay for jump cooldown
+    // public float jumpTimerDelay = 0.5f; // Delay for jump
 
     private SpriteRenderer spriteRenderer;
     private int currentFrame = 0;
