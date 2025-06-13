@@ -64,7 +64,7 @@ public class PlayerTop : MonoBehaviour
         }
     }
 
-    void HandleMovementAnimation()
+    void HandleMovementAnimation(){
         HandleAnimation();
     }
 
