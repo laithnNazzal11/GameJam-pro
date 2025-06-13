@@ -3595,6 +3595,7 @@ MonoBehaviour:
   deathSound: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: 14053c36776a94d19bbdd412c48832ec, type: 3}
   attackSound: {fileID: 0}
+  damageSound: {fileID: 8300000, guid: d2c328d3a3bb6461097c404e64d8892f, type: 3}
 --- !u!4 &732557130
 Transform:
   m_ObjectHideFlags: 0
