@@ -11397,7 +11397,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 62283135}
         m_TargetAssemblyTypeName: PlayerCollision, Assembly-CSharp
         m_MethodName: ReplayGame
         m_Mode: 1
@@ -13306,7 +13306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1384147372
 RectTransform:
   m_ObjectHideFlags: 0
