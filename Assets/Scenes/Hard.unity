@@ -1703,8 +1703,8 @@ Transform:
   m_GameObject: {fileID: 298989582}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0021001399, w: 0.9999978}
-  m_LocalPosition: {x: 80.51, y: -2.0099998, z: 0}
-  m_LocalScale: {x: 1.1805539, y: 1.1009068, z: 1}
+  m_LocalPosition: {x: 80.4891, y: -2.0099998, z: 0}
+  m_LocalScale: {x: 1.1813803, y: 1.1009068, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3182,8 +3182,8 @@ Transform:
   m_GameObject: {fileID: 613417454}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.184801, y: 0.5500002, z: 0}
-  m_LocalScale: {x: 0.22307548, y: 0.4690943, z: 0.4679}
+  m_LocalPosition: {x: 24.6861, y: 0.2285, z: 0}
+  m_LocalScale: {x: 0.26584068, y: 1.0000274, z: 0.4679}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1685586637}
@@ -8342,7 +8342,7 @@ Transform:
   m_GameObject: {fileID: 1580916857}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.06536498, w: -0.99786144}
-  m_LocalPosition: {x: 19.5058, y: 0.3282001, z: 0}
+  m_LocalPosition: {x: 19.14, y: 0.3282001, z: 0}
   m_LocalScale: {x: 0.09331196, y: 0.18067776, z: 0.4679}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8482,6 +8482,7 @@ GameObject:
   - component: {fileID: 1599096852}
   - component: {fileID: 1599096851}
   - component: {fileID: 1599096850}
+  - component: {fileID: 1599096853}
   m_Layer: 0
   m_Name: Square (18)
   m_TagString: Untagged
@@ -8519,7 +8520,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -8605,6 +8606,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.541}
+--- !u!114 &1599096853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599096849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4982e63a0e589493a92dd0ecab6ea040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: StartScreen
 --- !u!1 &1635948174
 GameObject:
   m_ObjectHideFlags: 0
@@ -9064,6 +9078,7 @@ GameObject:
   - component: {fileID: 1745448567}
   - component: {fileID: 1745448566}
   - component: {fileID: 1745448565}
+  - component: {fileID: 1745448568}
   m_Layer: 0
   m_Name: Square (21)
   m_TagString: Untagged
@@ -9101,7 +9116,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -9187,6 +9202,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.541}
+--- !u!114 &1745448568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745448564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4982e63a0e589493a92dd0ecab6ea040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: StartScreen
 --- !u!1 &1912583904
 GameObject:
   m_ObjectHideFlags: 0
