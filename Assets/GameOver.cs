@@ -4,7 +4,8 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField] private string sceneName;
     private SoundEffectsLayer soundEffects;
-    
+    [SerializeField] private GameObject gameOverPanel; 
+      
     void Start()
     {
         soundEffects = FindObjectOfType<SoundEffectsLayer>();
@@ -16,6 +17,11 @@ public class GameOver : MonoBehaviour
         {
             soundEffects.PlaySFX(soundEffects.winSound);
         }
-        SceneManager.LoadScene(sceneName);
+        if (gameOverPanel != null)
+        {
+            HealthManager.health = 0;
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0f; 
+        }
     }
 }

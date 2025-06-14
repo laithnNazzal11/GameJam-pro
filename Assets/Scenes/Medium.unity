@@ -1177,11 +1177,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.32772875, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1191,7 +1191,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 29.980001, y: 0.13183595}
+  m_Size: {x: 30.63546, y: 0.13183595}
   m_EdgeRadius: 0
 --- !u!212 &73117098
 SpriteRenderer:
@@ -1276,6 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Medium
+  gameOverPanel: {fileID: 1342912600}
 --- !u!1 &75543900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3536,27 +3537,13 @@ GameObject:
   - component: {fileID: 534344242}
   - component: {fileID: 534344241}
   - component: {fileID: 534344240}
-  - component: {fileID: 534344239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: line_0 (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &534344239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534344238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4982e63a0e589493a92dd0ecab6ea040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Medium
 --- !u!61 &534344240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3587,7 +3574,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -6255,27 +6242,13 @@ GameObject:
   - component: {fileID: 1090300524}
   - component: {fileID: 1090300523}
   - component: {fileID: 1090300522}
-  - component: {fileID: 1090300521}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: line_0 (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1090300521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090300520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4982e63a0e589493a92dd0ecab6ea040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Medium
 --- !u!61 &1090300522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6306,7 +6279,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -11588,6 +11561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Medium
+  gameOverPanel: {fileID: 1342912600}
 --- !u!1 &1949899829
 GameObject:
   m_ObjectHideFlags: 0

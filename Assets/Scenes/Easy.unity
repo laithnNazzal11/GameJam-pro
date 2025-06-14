@@ -803,6 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: StartScreen
+  gameOverPanel: {fileID: 0}
 --- !u!1 &62283129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,6 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Easy
+  gameOverPanel: {fileID: 827584403}
 --- !u!1 &74014766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,6 +3164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: StartScreen
+  gameOverPanel: {fileID: 0}
 --- !u!1 &313125742
 GameObject:
   m_ObjectHideFlags: 0
@@ -14424,6 +14427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Easy
+  gameOverPanel: {fileID: 827584403}
 --- !u!61 &1465531446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18467,6 +18471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Easy
+  gameOverPanel: {fileID: 827584403}
 --- !u!1 &1945559947
 GameObject:
   m_ObjectHideFlags: 0
