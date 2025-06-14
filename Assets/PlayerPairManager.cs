@@ -64,7 +64,6 @@ public class PlayerPairManager : MonoBehaviour
 
     void Update()
     {
-
         float moveInput = 0f;
 
         if (Input.GetKey(KeyCode.A))
@@ -73,29 +72,35 @@ public class PlayerPairManager : MonoBehaviour
             moveInput = 1f;
 
         // Set horizontal input for animation
-        playerTopScript.SetHorizontalInput(moveInput);
-        playerBottomScript.SetHorizontalInput(moveInput);
+        if (playerTopScript != null)
+            playerTopScript.SetHorizontalInput(moveInput);
+        if (playerBottomScript != null)
+            playerBottomScript.SetHorizontalInput(moveInput);
 
         // Apply horizontal movement
-        rbTop.linearVelocity = new Vector2(moveInput * moveSpeed, rbTop.linearVelocity.y);
-        rbBottom.linearVelocity = new Vector2(moveInput * moveSpeed, rbBottom.linearVelocity.y);
+        if (rbTop != null)
+            rbTop.linearVelocity = new Vector2(moveInput * moveSpeed, rbTop.linearVelocity.y);
+        if (rbBottom != null)
+            rbBottom.linearVelocity = new Vector2(moveInput * moveSpeed, rbBottom.linearVelocity.y);
 
         // Check for jump
-        bool isTopGrounded = Physics2D.OverlapCircle(groundCheckTop.position, groundCheckRadius, groundLayer);
-        bool isBottomGrounded = Physics2D.OverlapCircle(groundCheckBottom.position, groundCheckRadius, groundLayer);
+        bool isTopGrounded = groundCheckTop != null && Physics2D.OverlapCircle(groundCheckTop.position, groundCheckRadius, groundLayer);
+        bool isBottomGrounded = groundCheckBottom != null && rbBottom != null && Physics2D.OverlapCircle(groundCheckBottom.position, groundCheckRadius, groundLayer);
 
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
-            if (isTopGrounded)
+            if (isTopGrounded && rbTop != null)
             {
                 rbTop.linearVelocity = new Vector2(rbTop.linearVelocity.x, jumpForce);
-                soundEffects.PlaySFX(soundEffects.jumpSound);
+                if (soundEffects != null)
+                    soundEffects.PlaySFX(soundEffects.jumpSound);
             }
 
-            if (isBottomGrounded)
+            if (isBottomGrounded && rbBottom != null)
             {
                 rbBottom.linearVelocity = new Vector2(rbBottom.linearVelocity.x, -jumpForce);
-                soundEffects.PlaySFX(soundEffects.jumpSound);
+                if (soundEffects != null)
+                    soundEffects.PlaySFX(soundEffects.jumpSound);
             }
         }
     }

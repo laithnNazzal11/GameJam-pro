@@ -6,6 +6,7 @@ public class PlayerCollision : MonoBehaviour
 {
     [SerializeField] private string sceneName;
     [SerializeField] private GameObject gameOverPanel; // Drag your GameOver UI Panel in Inspector
+    [SerializeField] private GameObject ChooseOne; // Drag your GameOver UI Panel in Inspector
 
     private SoundEffectsLayer soundEffects;
 
@@ -48,6 +49,9 @@ public class PlayerCollision : MonoBehaviour
         }
         if (gameOverPanel != null)
             gameOverPanel.SetActive(false); // Hide Game Over UI at start
+
+        if (ChooseOne != null)
+            ChooseOne.SetActive(false);
     }
 
 
@@ -75,5 +79,49 @@ public class PlayerCollision : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void DestroyPlayerOne()
+    {
+        GameObject playerOne = GameObject.Find("PlayerTop");
+        if (playerOne != null)
+        {
+            Destroy(playerOne);
+
+            // Find the camera and set its follow target to PlayerBottom
+            CameraFollow camFollow = Camera.main.GetComponent<CameraFollow>();
+            GameObject playerTwo = GameObject.Find("PlayerBottom");
+            if (camFollow != null && playerTwo != null)
+            {
+                camFollow.target = playerTwo.transform;
+            }
+
+            ChooseOne.SetActive(false);
+            Time.timeScale = 1f; // Resume the game
+        }
+    }
+
+    public void DestroyPlayerTwo()
+    {
+        GameObject playerTwo = GameObject.Find("PlayerBottom");
+        if (playerTwo != null)
+        {
+            Destroy(playerTwo);
+            // Set references to null so Update() knows it's gone
+            var manager = FindObjectOfType<PlayerPairManager>();
+            if (manager != null)
+            {
+                manager.PlayerBottom = null;
+                // Use reflection or make these fields public if needed
+                var rbBottomField = typeof(PlayerPairManager).GetField("rbBottom", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                if (rbBottomField != null) rbBottomField.SetValue(manager, null);
+                var playerBottomScriptField = typeof(PlayerPairManager).GetField("playerBottomScript", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                if (playerBottomScriptField != null) playerBottomScriptField.SetValue(manager, null);
+                var groundCheckBottomField = typeof(PlayerPairManager).GetField("groundCheckBottom", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+                if (groundCheckBottomField != null) groundCheckBottomField.SetValue(manager, null);
+            }
+            ChooseOne.SetActive(false);
+            Time.timeScale = 1f; // Resume the game
+        }
     }
 }
