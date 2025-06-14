@@ -11,6 +11,7 @@ public class SoundEffectsLayer : MonoBehaviour
   public AudioClip attackSound;
   public AudioClip damageSound;
   public AudioClip collectCoinSound;
+  public AudioClip winSound;
 
   private void Start()
   {
