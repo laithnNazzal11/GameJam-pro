@@ -5798,7 +5798,7 @@ MonoBehaviour:
   - {fileID: 7890055846987212836, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
   - {fileID: -1755831512471263806, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
   attackSprites:
-  - {fileID: 4092526833877517221, guid: aa23c8c377e5e47de86bb34f9f25d217, type: 3}
+  - {fileID: -7939720171757009327, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
   frameRate: 10
   moveSpeed: 5
   jumpForce: 7
