@@ -10059,10 +10059,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1599096849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4982e63a0e589493a92dd0ecab6ea040, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e250264138f7744d9e94115b157ef7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: StartScreen
   gameOverPanel: {fileID: 0}
 --- !u!1 &1635948174
 GameObject:
@@ -10517,6 +10516,7 @@ GameObject:
   - component: {fileID: 1745448567}
   - component: {fileID: 1745448566}
   - component: {fileID: 1745448565}
+  - component: {fileID: 1745448568}
   m_Layer: 0
   m_Name: Square (21)
   m_TagString: Untagged
@@ -10640,6 +10640,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.541}
+--- !u!114 &1745448568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745448564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e250264138f7744d9e94115b157ef7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 0}
 --- !u!1 &1768883102
 GameObject:
   m_ObjectHideFlags: 0
