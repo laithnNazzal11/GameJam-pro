@@ -6805,6 +6805,7 @@ MonoBehaviour:
   attackSound: {fileID: 0}
   damageSound: {fileID: 8300000, guid: d2c328d3a3bb6461097c404e64d8892f, type: 3}
   collectCoinSound: {fileID: 8300000, guid: aa19dbfa9d5eb43fea4bc8eadca97586, type: 3}
+  winSound: {fileID: 8300000, guid: 6111f0ac85a0f483a8f67f5a60fb0bad, type: 3}
 --- !u!4 &653430949
 Transform:
   m_ObjectHideFlags: 0
